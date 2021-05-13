@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="dist/magnific-popup.css">
+
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="dist/jquery.magnific-popup.js"></script>
+
+<style>
+  img{width:25%;}
+  .parent-container{display: flex;}
+  .parent-container a{display: block;width: 25%;}
+  .wt{color:#fff;margin: auto;width: 66%;}
+</style>
+</head>
+<body>
+  <div class="parent-container">
+    <a href="images/0.png"><img src="images/0.png" alt="Open popup 0"></a>
+    <a href="images/1.png"><img src="images/1.png" alt="Open popup 1"></a>
+    <a href="images/2.png"><img src="images/2.png" alt="Open popup 2"></a>
+    <a href="images/3.png"><img src="images/3.png" alt="Open popup 3"></a>
+  </div>
+
+<button id="some-button">なにかのボタン</button>
+
+<details  class="wt" id="my-popup">
+  AAAAAAAAAAAA <br>
+  BBBBBBBBBBBB\<br>
+  CCCCCCCCCC <br>
+</details>
+<script>
+  $(document).ready(function() {
+    $('.image-link').magnificPopup({type:'image'});
+
+    $('.parent-container').magnificPopup({
+      delegate: 'a', // child items selector, by clicking on it popup will open
+      type: 'image'
+      // other options
+    });
+
+    $('.test-popup-link').magnificPopup({
+        type: 'image'
+        // other options
+      });
+
+
+    // Example with single object
+// $('#some-button').magnificPopup({
+//     items: {
+//       src: 'path-to-image-1.jpg'
+//     },
+//     type: 'image' // this is default type
+// });
+
+// Example with multiple objects
+$('#some-button').magnificPopup({
+    items: [
+      {
+        src: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg'
+      },
+      {
+        src: 'https://www.youtube.com/watch?v=VgzTfdzj_Ho',
+        type: 'iframe' // this overrides default type
+      },
+      {
+        src: $('<div class="wt">ダイナミックに作られた要素</div>'), // Dynamically created element
+        type: 'inline'
+      },
+      {
+        src: '<div class="wt">HTML string</div>',
+        type: 'inline'
+      },
+      {
+        src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+        type: 'inline'
+      }
+    ],
+    gallery: {
+      enabled: true
+    },
+    type: 'image' // this is default type
+  });
+});  
+</script>  
+</body>
+</html>

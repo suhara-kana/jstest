@@ -1,0 +1,32 @@
+<script src="https://github.com/yubinbango/yubinbango.git" charset="UTF-8"></script>
+
+<form class="h-adr">
+
+</form>
+
+<div class="h-adr">
+  <span class="p-country-name" style="display:none;">Japan</span>
+  <dl>
+    <dt>郵便番号</dt>
+    <dd>〒<input type="text" class="p-postal-code" size="8" maxlength="8"></dd>
+  </dl>
+  <!--入力欄2つの場合
+  <span class="p-country-name" style="display:none;">Japan</span>
+  〒<input type="text" class="p-postal-code" size="3" maxlength="3">
+  <input type="text" class="p-postal-code" size="4" maxlength="4">
+  -->
+  <dl>
+    <dt>住所</dt>
+    <dd><input type="text" class="p-region p-locality p-street-address p-extended-address">
+    </dd>
+  </dl>
+</div>
+
+<!--住所自動入力(AjaxZip3)
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+郵便番号:
+<input type="text" name="郵便番号" onKeyUp="AjaxZip3.zip2addr(this,'','住所','住所');"><br>
+住所:
+<input type="text" name="住所">
+-->

@@ -1,0 +1,10 @@
+<?php session_start(); ?>
+
+<?php include_once '../../book/header.php'; ?>
+<?php require_once 'menu.php'; ?>
+
+<?php
+require_once 'cart.php';
+?>
+<?php include_once '../../book/footer.php'; ?>
+
