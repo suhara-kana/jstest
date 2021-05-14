@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+
+
+<div id="holiday">練習問題</div>
+
+  <div id="datepicker"></div>
+  <div id="date"></div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+  $('#datepicker').datepicker();
+// 今回指定する年月日情報（2021-5-1から30まで）
+var yearStr = 2021 ;
+var monthStr = 5 ;
+// Dateオブジェクトの月は1じゃなくて0 からカウントされてるため
+var jsMonth = monthStr - 1 ;
+
+for(let i =1; i < 31 ; i++){
+  
+  // 指定日付で初期化したDateオブジェクトのインスタンスを生成する
+  var date = new Date( yearStr, jsMonth , i );
+  //1週目を0じゃなくて1にしたいので+6
+  var dn = Math.floor( (i+6) / 7 ); 
+  // 月曜日は数値の1として保持されている
+  var wn =  date.getDay();
+  if( dn == 2 && wn === 1)
+     console.log( i + 'は第二月曜です');
+  // console.log( i , i/7 , date.getDay());
+}
+</script>
+
+
+
