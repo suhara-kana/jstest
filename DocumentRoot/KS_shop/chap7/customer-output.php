@@ -32,7 +32,7 @@ if (empty($sql->fetchAll())) {
 		$sql->execute([
 			$_REQUEST['name'], $_REQUEST['address'], $_REQUEST['email'],
 			$_REQUEST['login'], $pswd]);
-    
+    //
 
 		echo 'お客様情報を登録しました。';
 	}
